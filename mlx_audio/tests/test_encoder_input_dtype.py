@@ -199,9 +199,7 @@ def test_voxtral_realtime_encoder_dtype(dtype):
 @pytest.mark.parametrize("dtype", ENCODER_DTYPES)
 def test_nemotron_subsampling_dtype(dtype):
     from mlx_audio.stt.models.nemotron_asr.config import ConformerArgs
-    from mlx_audio.stt.models.nemotron_asr.conformer import (
-        CausalDwStridingSubsampling,
-    )
+    from mlx_audio.stt.models.nemotron_asr.conformer import CausalDwStridingSubsampling
 
     # Single choke point for every mel path: Conformer.__call__, the streaming
     # _encode_mel_chunk path, and the buffered paths all reach this module.
